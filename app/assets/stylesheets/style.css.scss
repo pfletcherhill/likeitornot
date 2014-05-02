@@ -1,0 +1,92 @@
+// Header Style
+$header-height: 60px;
+.header {
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #eee;
+  background: white;
+  width: 100%;
+}
+
+.logo {
+  line-height: $header-height;
+  font-size: $header-height / 3;
+}
+
+.current-user {
+  line-height: $header-height;
+  
+  span,
+  a {
+    vertical-align: top;
+  }
+  
+  $user-photo-pad: 10px;
+  .current-user-photo {
+    display: inline-block;
+    height: $header-height - 2 * $user-photo-pad;
+    width: $header-height - 2 * $user-photo-pad;
+    margin-top: $user-photo-pad;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: $user-photo-pad;
+  }
+}
+
+.content {
+  margin-top: $header-height;
+  margin-bottom: 100px;
+}
+
+// Game Style
+$game-top-pad: 20px;
+$game-pad: 15%;
+.game {
+  width: 100% - 2*$game-pad;
+  margin: auto;
+  margin-top: $game-top-pad;
+  min-height: 200px;
+}
+
+$page-pad: 30px;
+$game-height: 200px;
+.game-page {
+  @include calc(width, "(100% / 3) - 2*#{$page-pad}");
+  height: $game-height;
+  margin: $page-pad;
+  float: left;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  overflow: hidden;
+  cursor: pointer;
+  
+  .page-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ccc;
+  }
+}
+
+.game-footer {
+  margin-top: $page-pad;
+  clear: both;
+  border-top: 1px solid #eee;
+  text-align: center;
+  padding: $page-pad 0;
+}
+
+.game-done {
+  line-height: 50px;
+  width: 40%;
+  background: $green;
+  color: white;
+  margin: auto;
+}
+
+

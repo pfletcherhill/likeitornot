@@ -1,0 +1,23 @@
+<h1>Nice! {{counts.true}}/{{counts.true + counts.false}}</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Answer</th>
+      <th>Result</th>
+      <th>Page</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="result in game.results">
+      <td>{{result.answer}}</td>
+      <td>{{result.correct}}</td>
+      <td>{{result.page.name}}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="game-footer">
+  <a ng-click="newGame()" class="game-done btn">Play Again!</a>
+</div>

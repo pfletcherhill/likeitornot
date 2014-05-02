@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class: "ie6"> <![endif]-->
+<!--[if IE 7 ]> <html class: "ie7"> <![endif]-->
+<!--[if IE 8 ]> <html class: "ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class: "ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> ><! <![endif]-->
+<html>
+  <!-- <![endif] -->
+  <head>
+    <title>Like It Or Not</title>
+    <link href='/assets/favicon.ico' rel='shortcut icon'>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=2' name='viewport'>
+    <meta content='Like It Or Not' name='description'>
+    <meta content='' name='keywords'>
+    <!-- Stylesheets -->
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body ng-app='Rosen'>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

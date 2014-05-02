@@ -1,0 +1,3 @@
+== Like It Or Not
+
+Challenges Facebook users to identify pages they like in an attempt to study how well users know their own activity on Facebook. 

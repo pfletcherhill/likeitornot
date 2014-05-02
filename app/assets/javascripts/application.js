@@ -1,0 +1,11 @@
+//= require jquery 
+//= require underscore
+//= require highcharts
+//= require angular
+//= require angular-resource
+//= require angular-ui-router.min
+//= require angular-ui-bootstrap-tpls
+//= require ngstorage.min
+//= require highcharts-ng
+//= require angular/rosen
+//= require_tree ./angular

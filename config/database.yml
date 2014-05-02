@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: rosen_development
+  pool: 5
+  username: rosen
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: rosen_test
+  pool: 5
+  username: rosen
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: rosen_production
+  pool: 5
+  username: rosen
+  password:
