@@ -1,6 +1,7 @@
 Rosen::Application.routes.draw do
   
   root to: "main#index"
+  get '/privacy', to: 'main#privacy'
     
   # Authentication
   get 'auth/:provider/callback', to: 'users#create_from_facebook'
