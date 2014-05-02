@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   
-  before_filter :restrict_access
+  before_filter :restrict_access, except: [:privacy]
   
   def index
   end
