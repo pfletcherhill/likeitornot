@@ -1,13 +1,16 @@
 <%= render "/templates/header" %>
 <div class="container content ui-view">
   <div class="game">
-    <div ng-repeat="result in game.results" ng-controller="PageCtrl" class="game-page" ng-click="toggleAnswer()">
-      <div class="page-bg" style="background-image: url({{page.picture}})">
-      {{page.name}}, {{result.answer}}
+    <div ng-repeat="result in game.results" ng-controller="PageCtrl" class="game-page" ng-click="toggleAnswer()" ng-class="{selected: result.answer}">
+      <div class="page-bg" style="background-image: url({{page.picture}})"></div>
+      <div class="page-name">{{page.name}}</div>
+      <div class="page-answer" ng-show="result.answer">
+        <i class="fa fa-check"></i>
+      </div>
     </div>
   </div>
 
   <div class="game-footer">
-    <a ng-click="submitAnswers()" class="game-done btn">I'm Done!</a>
+    <a ng-click="submitAnswers()" class="game-done btn btn-primary btn-lg">I'm Done!</a>
   </div>
 </div>

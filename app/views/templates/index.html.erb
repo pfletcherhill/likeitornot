@@ -1,4 +1,11 @@
 <%= render "/templates/header" %>
 <div class="container content ui-view">
-  <a ng-click="newGame()">New Game</a>
+  <br/>
+  <div class="jumbotron">
+    <h1>Hey, {{currentUser.name}}!</h1>
+    <p>Like It Or Not blurb...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam facilisis vulputate ipsum vel rutrum. Aliquam erat volutpat. Integer ultrices nunc id urna gravida commodo. Integer eget luctus tellus. Donec suscipit varius erat, in egestas dui adipiscing eget. Quisque varius nisi a aliquet feugiat. Nulla sed mi lorem. Cras faucibus, elit vitae pharetra pretium, tellus sapien vestibulum lacus, in blandit nibh nisl viverra dui. Nullam eget quam elit. Pellentesque tristique lectus enim, lacinia ultricies neque tristique sit amet. Aenean sit amet aliquet mi. Donec congue dolor a vehicula blandit. Proin ac tristique odio. Cras semper lacinia lectus sit amet vehicula. Maecenas accumsan pellentesque pellentesque. Ut varius arcu ultricies, ultricies purus eget, lacinia diam.</p>
+    <p>
+      <a class="btn btn-primary btn-lg" role="button" ng-click="newGame()">Start a New Game!</a>
+    </p>
+  </div>
 </div>

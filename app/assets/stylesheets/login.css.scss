@@ -1,0 +1,42 @@
+.login-form {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.login-logo {
+  width: 80%;
+  opacity: 0.85;
+}
+
+$fb-pad: 30px;
+.login-fb {
+  margin-top: $fb-pad;
+  border-top: 1px solid #dadada;
+  width: 100%;
+  padding-top: $fb-pad;
+}
+
+.login-fb-btn {
+  display: inline-block;
+  background-image: asset-url("facebook_logo.png");
+  background-repeat: no-repeat;
+  background-size: auto 46px;
+  height: 46px;
+  cursor: pointer;
+  text-decoration: none;
+  
+  span {
+    background-image: asset-url("facebook_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 46px;
+    display: block;
+    line-height: 46px;
+    margin-left: 46px;
+    color: white;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0 20px;
+  }
+}

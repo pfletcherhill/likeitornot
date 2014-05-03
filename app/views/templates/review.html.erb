@@ -1,23 +1,23 @@
-<h1>Nice! {{counts.true}}/{{counts.true + counts.false}}</h1>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Answer</th>
-      <th>Result</th>
-      <th>Page</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="result in game.results">
-      <td>{{result.answer}}</td>
-      <td>{{result.correct}}</td>
-      <td>{{result.page.name}}</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+<br/>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h1>Nice! You got {{counts.true}} of {{counts.true + counts.false}} correct!</h1>
+  </div>
+  <div class="panel-footer">
+    <div class="result" ng-repeat="result in game.results">
+      <div class="result-answer" style="background-image: url({{result.page.picture}})">
+        <div class="result-correct" ng-show="result.answer">
+          <i class="fa fa-check"></i>
+        </div>
+        <div class="result-wrong" ng-show="!result.answer">
+          <i class="fa fa-times"></i>
+        </div>
+      </div>
+      <div class="result-name">{{result.page.name}}</div>
+    </div>    
+  </div>
+</div>
 
 <div class="game-footer">
-  <a ng-click="newGame()" class="game-done btn">Play Again!</a>
+  <a ng-click="newGame()" class="game-done btn btn-primary btn-lg">Play Again!</a>
 </div>

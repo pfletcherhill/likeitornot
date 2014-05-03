@@ -1,0 +1,53 @@
+.header {
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #eee;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  line-height: $header-height;
+  font-size: $header-height / 3;
+  font-weight: bold;
+  color: $blue;
+  font-family: $sans;
+  
+  &:hover {
+    color: darken($blue, 10%);
+    text-decoration: none;
+    opacity: 0.85;
+  }
+  
+  $logo-img-pad: 15px;
+  img {
+    height: $header-height - 2 * $logo-img-pad;
+    vertical-align: top;
+    margin-top: $logo-img-pad;
+    margin-right: 5px;
+  }
+}
+
+.current-user {
+  line-height: $header-height;
+  
+  span,
+  a {
+    vertical-align: top;
+  }
+  
+  $user-photo-pad: 10px;
+  .current-user-photo {
+    display: inline-block;
+    height: $header-height - 2 * $user-photo-pad;
+    width: $header-height - 2 * $user-photo-pad;
+    margin-top: $user-photo-pad;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: $user-photo-pad;
+  }
+}
