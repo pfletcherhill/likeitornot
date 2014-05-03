@@ -1,31 +1,33 @@
-window.rosen = angular.module('Rosen', [
-  'ngResource', 'ui.router', 'highcharts-ng', 'ngStorage', 'ui.bootstrap'])
-  
+rosen = angular.module('Rosen', ['ngResource', 'ui.router', 'highcharts-ng', 'ngStorage', 'ui.bootstrap'])
   .config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
     ($stateProvider, $locationProvider, $urlRouterProvider) ->
       $stateProvider
-        .state 'main',
+        .state('main',
           url: '/'
           templateUrl: '/templates/index'
           controller: 'MainCtrl'
           resolve:
             currentUser: ($window, authService) ->
-              authService.ensureCurrentUser()        
-        .state 'game',
+              authService.ensureCurrentUser()   
+        )     
+        .state('game',
           url: '/play/:gameId'
           templateUrl: '/templates/play'
           controller: 'PlayCtrl'
           resolve:
             currentUser: ($window, authService) ->
-              authService.ensureCurrentUser()        
-        .state 'game.review',
+              authService.ensureCurrentUser()
+        )
+        .state('game.review',
           url: '/review'
           templateUrl: '/templates/review'
-          controller: 'ReviewCtrl'        
-        .state 'main.results',
+          controller: 'ReviewCtrl'
+        )      
+        .state('main.results',
           url: 'results'
           templateUrl: '/templates/results'
           controller: 'ResultsCtrl'
+        )
       $locationProvider.html5Mode(true)
       $urlRouterProvider.otherwise('/')
   ])
