@@ -4,36 +4,28 @@ window.rosen = angular.module('Rosen', [
   .config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
     ($stateProvider, $locationProvider, $urlRouterProvider) ->
       $stateProvider
-        # Main view
         .state 'main',
           url: '/'
           templateUrl: '/templates/index'
           controller: 'MainCtrl'
           resolve:
             currentUser: ($window, authService) ->
-              authService.ensureCurrentUser()
-        
-        # Play view
+              authService.ensureCurrentUser()        
         .state 'game',
           url: '/play/:gameId'
           templateUrl: '/templates/play'
           controller: 'PlayCtrl'
           resolve:
             currentUser: ($window, authService) ->
-              authService.ensureCurrentUser()
-        
-        # Result
+              authService.ensureCurrentUser()        
         .state 'game.review',
           url: '/review'
           templateUrl: '/templates/review'
-          controller: 'ReviewCtrl'
-        
-        # Results view
+          controller: 'ReviewCtrl'        
         .state 'main.results',
           url: 'results'
           templateUrl: '/templates/results'
           controller: 'ResultsCtrl'
-                
       $locationProvider.html5Mode(true)
       $urlRouterProvider.otherwise('/')
   ])
