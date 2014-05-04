@@ -2,6 +2,7 @@ Rosen::Application.routes.draw do
   
   root to: "main#index"
   get '/privacy', to: 'main#privacy'
+  get '/about', to: 'main#about'
   get '/stats', to: 'users#all_stats', defaults: {format: :json}
     
   # Authentication

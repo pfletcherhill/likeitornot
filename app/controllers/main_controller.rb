@@ -8,4 +8,7 @@ class MainController < ApplicationController
   def privacy
   end
   
+  def about
+  end
+  
 end

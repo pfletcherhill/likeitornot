@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
       correct_answers: results.map{|r| r.correct}.count(true),
       total_answers: results.count,
       likes: pages.count,
-      results: games.map{|g| g.results.where(correct: true).count}
+      results: games.map{|g| [g.updated_at, g.results.where(correct: true).count]}
     }
   end
   
@@ -92,7 +92,7 @@ class User < ActiveRecord::Base
       correct_answers: Result.pluck(:correct).count(true),
       total_answers: Result.count,
       likes: User.all.map{|u| u.pages.count}.sum / User.count,
-      results: Game.last(100).map{|g| g.results.where(correct: true).count}
+      results: Game.last(100).map{|g| [g.updated_at, g.results.where(correct: true).count]}
     }
   end
     

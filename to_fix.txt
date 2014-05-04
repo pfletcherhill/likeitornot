@@ -1,5 +1,1 @@
 - Graph more explanatory (y-axis, x-axis, tooltip)
-- Composition of correct-correct, correct-wrong, wrong-correct, wrong-wrong
-- Add that composition to results page (for everyone)
-- Add blurb to welcome page of site
-- Add link to about section and privacy policy
