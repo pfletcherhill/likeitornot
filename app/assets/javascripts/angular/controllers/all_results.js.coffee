@@ -26,10 +26,10 @@ angular.module('Rosen').controller('AllResultsCtrl', [
               text: "Number of Correct Answers"
           tooltip: 
             formatter: ->
-              return 'You got <b>' + this.y + '</b> of <b>9</b> correct'
+              return 'Scored <b>' + this.y + '</b> of <b>9</b> correct'
         series: [{
           color: 'green'
-          name: "Your Results"
+          name: "Everyone's Recent Results"
           data: timedData
         }]
         title:
