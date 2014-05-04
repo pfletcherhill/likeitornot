@@ -27,7 +27,12 @@ class Game < ActiveRecord::Base
   
   # TODO
   def populate_pages
-    user.pages_by_count(9).each{|p| self.results.create(page: p)}
+    user_count = rand(0..9)
+    user_pages = user.pages_by_count(user_count)
+    pages = Page.where("id NOT IN (?)", [51, 26]).order("RANDOM()").limit(9 - user_count)
+    (user_pages + pages).each do |page|
+      self.results.create(page: page)
+    end
   end
   
 end

@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   end
   
   def pages_by_count(count = 9)
-    self.pages.shuffle.first(count) # TODO: Add non-linked pages as well
+    self.pages.shuffle.first(count)
   end
   
   def populate_pages

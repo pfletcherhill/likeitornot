@@ -7,11 +7,17 @@
       </a>
     </div>
     <div class="pull-right">
-      <span class="current-user">
-        <span class="current-user-photo" style="background-image: url({{currentUser.avatar}})"></span>
-        {{currentUser.name}}
-        <a href="/logout" target="_self">Logout</a>
-      </span>
+      <div class="btn-group" dropdown is-open="status.isopen">
+        <button type="button" class="current-user dropdown-toggle" ng-disabled="disabled">
+          <span class="current-user-photo" style="background-image: url({{currentUser.avatar}})"></span>
+          {{currentUser.name}}
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a ui-sref="main.results">Results</a></li>
+          <li class="divider"></li>
+          <li><a href="/logout" target="_self">Logout</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

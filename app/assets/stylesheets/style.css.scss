@@ -37,6 +37,7 @@ $page-z: 10;
   
   &:hover {
     border: 1px solid #aaa;
+    @include box-shadow(0 0 2px 1px #ccc);
   }
   
   &.selected {

@@ -33,6 +33,20 @@
 
 .current-user {
   line-height: $header-height;
+  height: $header-height - 1px;
+  box-sizing: border-box;
+  border: none;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  padding: 0 10px;
+  background: none;
+  font-size: $header-height / 3.5;
+  @include box-shadow(none);
+  
+  &:hover {
+    background-color: #fafafa;
+    border-color: #eee;
+  }
   
   span,
   a {
@@ -41,10 +55,12 @@
   
   $user-photo-pad: 10px;
   .current-user-photo {
+    border: 1px solid #333;
+    border-radius: ($header-height - 2 * $user-photo-pad) / 2;
     display: inline-block;
     height: $header-height - 2 * $user-photo-pad;
     width: $header-height - 2 * $user-photo-pad;
-    margin-top: $user-photo-pad;
+    margin-top: $user-photo-pad - 2px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
