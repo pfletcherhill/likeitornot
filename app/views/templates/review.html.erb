@@ -5,38 +5,39 @@
   </div>
   <div class="panel-footer">
     <div style="clear: both" ng-repeat="i in [3, 6, 9]">
-    <div class="result" ng-repeat="result in game.results.slice(i - 3, i)">
-      <div class="result-answer" style="background-image: url({{result.page.picture}})">
-        <div class="result-correct" ng-show="result.correct">
-          <i class="fa fa-check"></i>
+      <div class="result" ng-repeat="result in game.results.slice(i - 3, i)">
+        <div class="result-answer" style="background-image: url({{result.page.picture}})">
+          <div class="result-correct" ng-show="result.correct">
+            <i class="fa fa-check"></i>
+          </div>
+          <div class="result-wrong" ng-show="!result.correct">
+            <i class="fa fa-times"></i>
+          </div>
         </div>
-        <div class="result-wrong" ng-show="!result.correct">
-          <i class="fa fa-times"></i>
+        <div class="result-name">
+          {{result.page.name}}
+          <div class="result-summary">
+            <span class="correct" ng-if="result.answer && result.correct">
+              You like this on Facebook and offline!
+            </span>
+            <span class="wrong" ng-if="result.answer && !result.correct">
+              You like this offline but not on Facebook!
+            </span>
+            <span class="correct" ng-if="!result.answer && result.correct">
+              You don't like this at all!
+            </span>
+            <span class="wrong" ng-if="!result.answer && !result.correct">
+              You only like this on Facebook!
+            </span>
+          </div>
+          <div class="fb-link">
+            <a href="{{result.page.url}}" target="_new" class="fb-link-btn">
+              <span>See on Facebook</span>
+            </a>
+          </div>
         </div>
       </div>
-      <div class="result-name">
-        {{result.page.name}}
-        <div class="result-summary">
-          <span class="correct" ng-if="result.answer && result.correct">
-            You like this on Facebook and offline!
-          </span>
-          <span class="wrong" ng-if="result.answer && !result.correct">
-            You like this offline but not on Facebook!
-          </span>
-          <span class="correct" ng-if="!result.answer && result.correct">
-            You don't like this at all!
-          </span>
-          <span class="wrong" ng-if="!result.answer && !result.correct">
-            You only like this on Facebook!
-          </span>
-        </div>
-        <div class="fb-link">
-          <a href="{{result.page.url}}" target="_new" class="fb-link-btn">
-            <span>See on Facebook</span>
-          </a>
-        </div>
-      </div>
-    </div>    
+    </div>
     <div style="clear: both"></div>
   </div>
 </div>
