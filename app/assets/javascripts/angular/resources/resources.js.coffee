@@ -6,6 +6,8 @@ angular.module('Rosen')
       {
         update: {method: 'PUT'}
         fetchMe: {method: 'GET', url: '/me'}
+        getStats: {method: 'GET', params: {uid: '@uid'}, url: '/users/:uid/stats'}
+        getAllStats: {method: 'GET', url: '/stats'}
       }
     return User
   ])

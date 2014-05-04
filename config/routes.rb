@@ -2,6 +2,7 @@ Rosen::Application.routes.draw do
   
   root to: "main#index"
   get '/privacy', to: 'main#privacy'
+  get '/stats', to: 'users#all_stats', defaults: {format: :json}
     
   # Authentication
   get 'auth/:provider/callback', to: 'users#create_from_facebook'
@@ -17,6 +18,7 @@ Rosen::Application.routes.draw do
   
   # Game
   resources :users, defaults: {format: :json} do
+    get '/stats', to: 'users#stats'
     resources :games do
       post 'submit_answers', to: 'games#submit_answers'
     end

@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   
   # Associations
   has_and_belongs_to_many :pages, -> { uniq }
-  has_many :games
-  has_many :results, dependent: :destroy
+  has_many :games, dependent: :destroy
+  has_many :results, through: :games
   
   # Methods
   def graph(token = self.oauth_token)
@@ -56,6 +56,15 @@ class User < ActiveRecord::Base
     return results
   end
   
+  def stats
+    return {
+      correct_answers: results.map{|r| r.correct}.count(true),
+      total_answers: results.count,
+      likes: pages.count,
+      results: games.map{|g| g.results.where(correct: true).count}
+    }
+  end
+  
   # Custom serializable_hash for use with as_json, to_json and to_xml
   def serializable_hash(options = nil)
     super({
@@ -76,6 +85,15 @@ class User < ActiveRecord::Base
       return user if user.save
       return nil
     end
+  end
+  
+  def self.stats
+    return {
+      correct_answers: Result.pluck(:correct).count(true),
+      total_answers: Result.count,
+      likes: User.all.map{|u| u.pages.count}.sum / User.count,
+      results: Game.last(100).map{|g| g.results.where(correct: true).count}
+    }
   end
     
 end

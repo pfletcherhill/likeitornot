@@ -151,3 +151,26 @@ $answer-height: 60px;
   font-size: 18px;
 }
 
+.results-container {
+  box-sizing: border-box;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #dadada;
+  border-top: none;
+}
+
+$panel-margin: 30px;
+.panel-header {
+  margin-bottom: $panel-margin / 2;
+}
+
+.panel-half {
+  @include calc("width", "50% - #{$panel-margin / 2}");
+  float: left;
+  margin-right: $panel-margin;
+  
+  &:nth-child(even) {
+    margin-right: 0;
+  }
+}
+

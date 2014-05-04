@@ -21,5 +21,18 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     redirect_to root_url
   end
+  
+  def all_stats
+    respond_to do |format|
+      format.json {render json: User.stats, status: 200}
+    end
+  end
+  
+  def stats
+    user = User.find_by(uid: params[:user_id])
+    respond_to do |format|
+      format.json {render json: user.stats, status: 200}
+    end
+  end
     
 end
