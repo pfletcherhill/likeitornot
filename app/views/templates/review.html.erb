@@ -4,7 +4,8 @@
     <h1>Nice! You got {{counts.true || 0}} of {{counts.true + counts.false}} correct!</h1>
   </div>
   <div class="panel-footer">
-    <div class="result" ng-repeat="result in game.results">
+    <div style="clear: both" ng-repeat="i in [3, 6, 9]">
+    <div class="result" ng-repeat="result in game.results.slice(i - 3, i)">
       <div class="result-answer" style="background-image: url({{result.page.picture}})">
         <div class="result-correct" ng-show="result.correct">
           <i class="fa fa-check"></i>
@@ -35,7 +36,6 @@
           </a>
         </div>
       </div>
-      <div ng-if="$index % 3 == 0" style="clear: both"></div>
     </div>    
     <div style="clear: both"></div>
   </div>
