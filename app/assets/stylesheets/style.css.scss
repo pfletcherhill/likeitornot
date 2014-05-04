@@ -101,13 +101,14 @@ $page-z: 10;
 }
 
 .result {
-  padding: 10px 0;
+  padding: 15px;
   border-bottom: 1px solid #dadada;
-}
-
-.result-answer,
-.result-name {
-  display: inline-block;
+  float: left;
+  @include calc(width, "(100% / 3) - 2*#{$page-pad}");
+  margin: $page-pad;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 5px;
 }
 
 $answer-height: 60px;
@@ -118,6 +119,7 @@ $answer-height: 60px;
   background-size: cover;
   position: relative;
   overflow: hidden;
+  float: left;
   
   .result-correct,
   .result-wrong {
@@ -144,5 +146,8 @@ $answer-height: 60px;
 
 .result-name {
   vertical-align: top;
+  margin-left: $answer-height + 10px;
+  font-family: $sans;
+  font-size: 18px;
 }
 

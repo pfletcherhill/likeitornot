@@ -25,7 +25,6 @@ class Game < ActiveRecord::Base
     end while Game.exists?(uid: self.uid)
   end
   
-  # TODO
   def populate_pages
     user_count = rand(1..8)
     user_pages = user.pages_by_count(user_count)

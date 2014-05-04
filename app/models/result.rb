@@ -13,8 +13,8 @@ class Result < ActiveRecord::Base
   end
   
   def evaluate_answer(user, answer)
-    self.correct = (page.users.include?(user) == answer)
     self.answer = !!answer
+    self.correct = (page.users.include?(user) == !!answer)
     self.save
   end
   

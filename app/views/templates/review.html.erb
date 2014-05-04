@@ -1,23 +1,27 @@
 <br/>
 <div class="panel panel-default">
   <div class="panel-body">
-    <h1>Nice! You got {{counts.true}} of {{counts.true + counts.false}} correct!</h1>
+    <h1>Nice! You got {{counts.true || 0}} of {{counts.true + counts.false}} correct!</h1>
   </div>
   <div class="panel-footer">
     <div class="result" ng-repeat="result in game.results">
       <div class="result-answer" style="background-image: url({{result.page.picture}})">
-        <div class="result-correct" ng-show="result.answer">
+        <div class="result-correct" ng-show="result.correct">
           <i class="fa fa-check"></i>
         </div>
-        <div class="result-wrong" ng-show="!result.answer">
+        <div class="result-wrong" ng-show="!result.correct">
           <i class="fa fa-times"></i>
         </div>
       </div>
       <div class="result-name">{{result.page.name}}</div>
     </div>    
+    <div style="clear: both"></div>
   </div>
 </div>
 
 <div class="game-footer">
-  <a ng-click="newGame()" class="game-done btn btn-primary btn-lg">Play Again!</a>
+  <a ng-click="newGame()" class="game-done btn btn-primary btn-lg">
+    <i class="fa fa-refresh"></i>
+    Play Again!
+  </a>
 </div>

@@ -4,7 +4,7 @@ angular.module('Rosen').controller('ReviewCtrl', [
         
     $scope.game.$promise.then ->
       $scope.counts = _.countBy $scope.game.results, (res) ->
-        return res.answer == true ? 'true': 'false'
+        return res.correct == true ? 'true': 'false'
              
     # New Game
     $scope.newGame = ->
