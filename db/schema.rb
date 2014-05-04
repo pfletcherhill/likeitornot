@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504155901) do
+ActiveRecord::Schema.define(version: 20140504160428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,11 @@ ActiveRecord::Schema.define(version: 20140504155901) do
   create_table "pages", force: true do |t|
     t.string   "name"
     t.string   "url"
-    t.string   "category"
     t.string   "picture"
     t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "category"
   end
 
   create_table "pages_users", id: false, force: true do |t|
