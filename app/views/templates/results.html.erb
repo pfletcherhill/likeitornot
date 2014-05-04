@@ -1,87 +1,49 @@
 <br/>
 <ul class="nav nav-tabs">
-  <li ng-class="{active: personalResults}">
-    <a href="#" ng-click="personalResults = true">Your Results</a>
+  <li ng-class="{active: activeMenu == 'me'}">
+    <a ui-sref="main.results">Your Results</a>
   </li>
-  <li ng-class="{active: !personalResults}">
-    <a href="#" ng-click="personalResults = false">Everyone's Results</a>
+  <li ng-class="{active: activeMenu == 'all'}">
+    <a ui-sref="main.results.all">Everyone's Results</a>
+  </li>
+  <li ng-class="{active: activeMenu == 'personality'}">
+    <a ui-sref="main.results.personality">Your Personality</a>
   </li>
 </ul>
-<div class="results-container">
-  <div ng-if="personalResults">
-    <div class="panel-header">
-      <div class="panel panel-default panel-half">
-        <div class="panel-heading">
-          <h3 class="panel-title">Overall Record (Percentage)</h3>
-        </div>
-        <div class="panel-body">
-          <h1 ng-show="myStats.correct_answers">
-            {{myStats.correct_answers}}/{{myStats.total_answers}}
-            ({{(myStats.correct_answers/myStats.total_answers * 100).toFixed(2)}}%)
-          </h1>
-        </div>
-      </div>
-    
-      <div class="panel panel-default panel-half">
-        <div class="panel-heading">
-          <h3 class="panel-title">Number of Likes</h3>
-        </div>
-        <div class="panel-body" ng-show="myStats.likes">
-          <h1>{{myStats.likes}} Pages</h1>
-        </div>
-      </div>
-    
-      <div style="clear: both"></div>
-    </div>
-  
-    <div class="panel panel-default">
+<div class="results-container ui-view">
+  <div class="panel-header">
+    <div class="panel panel-default panel-half">
       <div class="panel-heading">
-        <h3 class="panel-title">Results Over Time</h3>
+        <h3 class="panel-title">Overall Record (Percentage)</h3>
       </div>
       <div class="panel-body">
-        <div ng-controller="MyResultsCtrl">
-          <highchart config="chartConfig"></highchart>
-        </div>
+        <h1 ng-show="myStats.correct_answers">
+          {{myStats.correct_answers}}/{{myStats.total_answers}}
+          ({{(myStats.correct_answers/myStats.total_answers * 100).toFixed(2)}}%)
+        </h1>
+      </div>
+    </div>
+  
+    <div class="panel panel-default panel-half">
+      <div class="panel-heading">
+        <h3 class="panel-title">Number of Likes</h3>
+      </div>
+      <div class="panel-body" ng-show="myStats.likes">
+        <h1>{{myStats.likes}} Pages</h1>
+      </div>
+    </div>
+  
+    <div style="clear: both"></div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Results Over Time</h3>
+    </div>
+    <div class="panel-body">
+      <div ng-controller="MyResultsCtrl">
+        <highchart config="chartConfig"></highchart>
       </div>
     </div>
   </div>
-  
-  <div ng-if="!personalResults">
-    <div class="panel-header">
-      <div class="panel panel-default panel-half">
-        <div class="panel-heading">
-          <h3 class="panel-title">Overall Record (Percentage)</h3>
-        </div>
-        <div class="panel-body">
-          <h1 ng-show="stats.correct_answers">
-            {{stats.correct_answers}}/{{stats.total_answers}}
-            ({{(stats.correct_answers/stats.total_answers * 100).toFixed(2)}}%)
-          </h1>
-        </div>
-      </div>
-    
-      <div class="panel panel-default panel-half">
-        <div class="panel-heading">
-          <h3 class="panel-title">Average Number of Likes</h3>
-        </div>
-        <div class="panel-body" ng-show="stats.likes">
-          <h1>{{stats.likes}} Pages</h1>
-        </div>
-      </div>
-    
-      <div style="clear: both"></div>
-    </div>
-  
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Results Over Time</h3>
-      </div>
-      <div class="panel-body">
-        <div ng-controller="AllResultsCtrl">
-          <highchart config="chartConfig"></highchart>
-        </div>
-      </div>
-    </div>
-  </div>  
-  
 </div>

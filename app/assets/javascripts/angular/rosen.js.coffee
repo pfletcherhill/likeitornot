@@ -28,6 +28,17 @@ rosen = angular.module('Rosen', ['ngResource', 'ui.router', 'highcharts-ng', 'ng
           templateUrl: '/templates/results'
           controller: 'ResultsCtrl'
         )
+        .state('main.results.all',
+          url: '/all'
+          templateUrl: '/templates/all_results'
+          controller: 'AllResultsCtrl'
+        )
+        .state('main.results.personality',
+          url: '/personality'
+          templateUrl: '/templates/personality'
+          controller: 'PersonalityResultsCtrl'
+        )
+        
       $locationProvider.html5Mode(true)
       $urlRouterProvider.otherwise('/')
   ])

@@ -1,7 +1,10 @@
 angular.module('Rosen').controller('AllResultsCtrl', [
-  '$scope', '$stateParams',
-  ($scope, $stateParams) -> 
+  '$scope', '$rootScope', '$stateParams',
+  ($scope, $rootScope, $stateParams) -> 
   
+    console.log $rootScope
+    $rootScope.activeMenu = 'all'
+    
     drawChart = (data) ->
       $scope.chartConfig =
         options:  

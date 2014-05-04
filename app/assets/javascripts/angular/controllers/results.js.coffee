@@ -1,12 +1,11 @@
 angular.module('Rosen').controller('ResultsCtrl', [
-  '$scope', '$http', '$stateParams', 'User',
-  ($scope, $http, $stateParams, User) ->  
+  '$scope', '$rootScope', '$http', '$stateParams', 'User',
+  ($scope, $rootScope, $http, $stateParams, User) ->  
    
     # View constants
     $scope.loadingData = true
     
-    # Active results
-    $scope.personalResults = true
+    $rootScope.activeMenu = 'me'
     
     $scope.myStats = User.getStats({uid: $scope.currentUser.uid})
     

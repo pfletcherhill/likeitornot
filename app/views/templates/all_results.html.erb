@@ -1,0 +1,35 @@
+<div class="panel-header">
+  <div class="panel panel-default panel-half">
+    <div class="panel-heading">
+      <h3 class="panel-title">Overall Record (Percentage)</h3>
+    </div>
+    <div class="panel-body">
+      <h1 ng-show="stats.correct_answers">
+        {{stats.correct_answers}}/{{stats.total_answers}}
+        ({{(stats.correct_answers/stats.total_answers * 100).toFixed(2)}}%)
+      </h1>
+    </div>
+  </div>
+
+  <div class="panel panel-default panel-half">
+    <div class="panel-heading">
+      <h3 class="panel-title">Average Number of Likes</h3>
+    </div>
+    <div class="panel-body" ng-show="stats.likes">
+      <h1>{{stats.likes}} Pages</h1>
+    </div>
+  </div>
+
+  <div style="clear: both"></div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Results Over Time</h3>
+  </div>
+  <div class="panel-body">
+    <div ng-controller="AllResultsCtrl">
+      <highchart config="chartConfig"></highchart>
+    </div>
+  </div>
+</div>
