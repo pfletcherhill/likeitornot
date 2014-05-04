@@ -5,6 +5,7 @@ class Page < ActiveRecord::Base
   
   # Callbacks
   before_validation :set_picture
+  before_validation :set_url
   
   # Associations
   has_and_belongs_to_many :users, -> { uniq }
@@ -13,6 +14,14 @@ class Page < ActiveRecord::Base
   
   def graph
     @graph ||= Koala::Facebook::API.new
+  end
+  
+  def fb_object
+    graph.get_object(self.uid)
+  end
+  
+  def set_url
+    self.url ||= fb_object["link"]
   end
   
   # Methods
@@ -31,7 +40,7 @@ class Page < ActiveRecord::Base
   # Custom serializable_hash for use with as_json, to_json and to_xml
   def serializable_hash(options = nil)
     super({
-      only: [:uid, :name, :picture],
+      only: [:uid, :name, :picture, :url],
       methods: []
     }.merge(options || {}))
   end

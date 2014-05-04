@@ -27,11 +27,11 @@ ActiveRecord::Schema.define(version: 20140504160428) do
   create_table "pages", force: true do |t|
     t.string   "name"
     t.string   "url"
-    t.string   "picture"
     t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "category"
+    t.text     "picture"
   end
 
   create_table "pages_users", id: false, force: true do |t|

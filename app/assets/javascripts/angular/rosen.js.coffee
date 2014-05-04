@@ -37,6 +37,11 @@ rosen = angular.module('Rosen', ['ngResource', 'ui.router', 'highcharts-ng', 'ng
       angular.element('meta[name=csrf-token]').attr('content');
   ])
   
+  # .config(['ezfbProvider', (ezfbProvider) ->
+  #     ezfbProvider.setInitParams
+  #       appId: '467674363363838'
+  #   ])
+  #   
   .run(['$rootScope', '$timeout', ($rootScope, $timeout) ->
     # Add additional initialization code here
     # Globally keeps track of whether the right bar is open or closed.

@@ -95,9 +95,8 @@ $page-z: 10;
 .game-done {
   line-height: 50px;
   width: 40%;
-  //background: $green;
   color: white;
-  margin: auto;
+  margin: 0 10px;
 }
 
 .result {
@@ -149,6 +148,49 @@ $answer-height: 60px;
   margin-left: $answer-height + 10px;
   font-family: $sans;
   font-size: 18px;
+}
+
+.result-summary {
+  font-size: 12px;
+  font-style: italic;
+  
+  .correct {
+    color: green;
+  }
+  
+  .wrong {
+    color: red;
+  }
+}
+
+.fb-link {
+  border-top: 1px solid #eee;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+$fb-link-size: 24px;
+.fb-link-btn {
+  display: inline-block;
+  background-image: asset-url("facebook_logo.png");
+  background-repeat: no-repeat;
+  background-size: auto $fb-link-size;
+  height: $fb-link-size;
+  cursor: pointer;
+  text-decoration: none;
+  
+  span {
+    background-image: asset-url("facebook_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% $fb-link-size;
+    display: block;
+    line-height: $fb-link-size;
+    margin-left: $fb-link-size;
+    color: white;
+    font-size: $fb-link-size / 2.3;
+    font-weight: normal;
+    padding: 0 10px;
+  }
 }
 
 .results-container {

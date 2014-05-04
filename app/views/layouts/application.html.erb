@@ -4,7 +4,7 @@
 <!--[if IE 8 ]> <html class: "ie8"> <![endif]-->
 <!--[if IE 9 ]> <html class: "ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]> ><! <![endif]-->
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
   <!-- <![endif] -->
   <head>
     <title>Like It Or Not</title>
@@ -16,10 +16,10 @@
     <meta content='' name='keywords'>
     <!-- Stylesheets -->
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-  <body ng-app='Rosen'>
+  <body ng-app='Rosen'>          
     <%= yield %>
-    <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -26,7 +26,7 @@ class Game < ActiveRecord::Base
   end
   
   def populate_pages
-    user_count = rand(1..8)
+    user_count = rand(1..6)
     user_pages = user.pages_by_count(user_count)
     pages = Page.where("id NOT IN (?)", [51, 26]).order("RANDOM()").limit(9 - user_count)
     (user_pages + pages).each do |page|

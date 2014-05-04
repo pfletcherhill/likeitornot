@@ -5,6 +5,7 @@
 //= require angular-resource
 //= require angular-ui-router.min
 //= require angular-ui-bootstrap-tpls
+//= require angular-easyfb.min
 //= require ngstorage.min
 //= require highcharts-ng
 //= require angular/rosen

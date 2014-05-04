@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   def populate_pages
     pages.clear # Flush pages
     likes.each do |like|
-      params = {uid: like["id"], category: like["category"], name: like["name"]}
+      params = {uid: like["id"], category: like["category"], name: like["name"], url: like["url"]}
       page = Page.find_or_create_by(params)
       pages << page
     end

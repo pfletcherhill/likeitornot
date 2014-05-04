@@ -13,7 +13,29 @@
           <i class="fa fa-times"></i>
         </div>
       </div>
-      <div class="result-name">{{result.page.name}}</div>
+      <div class="result-name">
+        {{result.page.name}}
+        <div class="result-summary">
+          <span class="correct" ng-if="result.answer && result.correct">
+            You like this on Facebook and offline!
+          </span>
+          <span class="wrong" ng-if="result.answer && !result.correct">
+            You like this offline but not on Facebook!
+          </span>
+          <span class="correct" ng-if="!result.answer && result.correct">
+            You don't like this at all!
+          </span>
+          <span class="wrong" ng-if="!result.answer && !result.correct">
+            You only like this on Facebook!
+          </span>
+        </div>
+        <div class="fb-link">
+          <a href="{{result.page.url}}" target="_new" class="fb-link-btn">
+            <span>See on Facebook</span>
+          </a>
+        </div>
+      </div>
+      <div ng-if="$index % 3 == 0" style="clear: both"></div>
     </div>    
     <div style="clear: both"></div>
   </div>
@@ -23,5 +45,9 @@
   <a ng-click="newGame()" class="game-done btn btn-primary btn-lg">
     <i class="fa fa-refresh"></i>
     Play Again!
+  </a>
+  <a ui-sref="main.results" class="game-done btn btn-primary btn-lg">
+    <i class="fa fa-bar-chart-o"></i>
+    See My Results!
   </a>
 </div>
